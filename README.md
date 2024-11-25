@@ -56,6 +56,7 @@ The application has several tools available to debug and help developing new fea
 
 ### Debug controls 
 Simple non-VR controls are implemented to use in the game for pattern and visual effects testing.
+When starting the application, first you will need to get through the calibration phase. You can bypass this by pressing "V".
 ![Control Scheme](Images/DebugControls.PNG)
 
 ### WAM Test Pattern - VS Code Extension
@@ -68,9 +69,9 @@ The **Pattern Manager** script has a Debug Mode implemented which, if active, sh
 
 ## Mole Whacking Data Collection
 
-This application logs various game datas, from the activated mole position to the position travelled by the player's laser between two mole poping. The logs are by default saved in the application main directory, however a custom path can be set from the Unity editor. These data are logged when specific events occurs.
+This application logs various game datas, from the activated mole position to the position travelled by the player's laser between two mole poping. The logs are by default saved in the OS documents directory (e.g. C:\Users\XYZ\Documents\), however a custom path can be set from the Unity editor. The logging happens in three diffferent files and the architecture is explained further [here](https://docs.google.com/presentation/d/1iP6VDRuE3DzOMys-ztHc_QtDELSFZ1KeNmDyQoJZi10/edit#slide=id.g1029978cd0c_0_10).
 
-The events are:
+These following events are logged:
 
 * **Game Started**: raised when a game is started
 * **Game Paused**: raised when the running game is paused
@@ -156,3 +157,9 @@ The logged data are:
 
 * **PupilTime**: The time in the PupilTime format, at the time the logging takes place.
 * **PupilTimeSample**: The time in PupilTime format, at the time we receive gaze data.
+
+Meta logs:
+* SessionState: This is the state of the game, at the time it stopped and was logged. Its values are either "Finished" (if the treatment program naturally ended) or "Interrupted" (if the treatment program was interrupted). This is different from GameState, which logs the state of the game at a given timestamp.
+* SessionDuration: the duration of the session in seconds.
+* SessionID: A unique MD5 based ID of the session.
+* SessionProgram: What program the session was running.
