@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Valve.VR.InteractionSystem;
 
 /*
 Spawns, references and activates the moles. Is the only component to directly interact with the moles.
@@ -557,5 +558,12 @@ public class WallManager : MonoBehaviour
             Clear();
             Enable();
         }
+    }
+
+    public void ResetMoleSpawnOrder()
+    {
+        spawnOrder = 0;
+        moles.Values.ForEach(m => m.SetSpawnOrder(-1));
+        moleCount = 0;
     }
 }
