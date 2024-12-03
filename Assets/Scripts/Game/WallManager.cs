@@ -562,8 +562,6 @@ public class WallManager : MonoBehaviour
 
     public void ResetMoleSpawnOrder()
     {
-        spawnOrder = 0;
-        moles.Values.ForEach(m => m.SetSpawnOrder(-1));
         moleCount = 0;
     }
 }
