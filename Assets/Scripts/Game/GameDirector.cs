@@ -124,6 +124,7 @@ public class GameDirector : MonoBehaviour
 
     }
 
+
     private void ResetMoleSpawnOrder()
     {
         wallManager.ResetMoleSpawnOrder();
