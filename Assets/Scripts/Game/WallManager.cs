@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Valve.VR.InteractionSystem;
 
 /*
 Spawns, references and activates the moles. Is the only component to directly interact with the moles.
